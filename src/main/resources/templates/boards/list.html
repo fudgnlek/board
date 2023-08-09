@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>글 목록</title>
+</head>
+<body>
+<h2>글 목록</h2>
+<table>
+    <tr>
+        <th>ID</th>
+        <th>제목</th>
+    </tr>
+    <tr th:each="board : ${boards}">
+        <td th:text="${board.id}"></td>
+        <td><a th:href="@{/views/{id}(id=${board.id})}" th:text="${board.title}"></a></td>
+    </tr>
+</table>
+<br>
+<a href="/write">글 작성</a>
+</body>
+</html>
